@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Break Helper - Settings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="popup-root">
+        <div class="popup-shell">
+            <header class="popup-header">
+                <div class="popup-title-row">
+                    <img class="popup-icon" src="icon.png" alt="Eye Break icon">
+                    <h1 data-i18n="title">Coffee Break</h1>
+                </div>
+                <p class="popup-subtitle" data-i18n="subtitle">Rest your eyes regularly</p>
+                <div class="header-controls">
+                    <button id="themeToggle" class="control-btn" type="button" aria-pressed="false">
+                        <span class="control-label" data-i18n="darkMode">Dark Mode</span>
+                    </button>
+                    <button id="langToggle" class="control-btn" type="button" aria-pressed="false">
+                        <span class="control-label" data-i18n="arabic">Arabic</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="popup-main">
+                <section class="card settings-group">
+                    <div class="setting-label">
+                        <div class="label-text">
+                            <span class="label-title" data-i18n="enableReminders">Enable Reminders</span>
+                            <span class="label-description" data-i18n="enableDesc">Turn reminders on/off</span>
+                        </div>
+                        <input type="checkbox" id="enableToggle" class="toggle-switch">
+                    </div>
+                </section>
+
+                <section class="card settings-group">
+                    <div class="setting-header">
+                        <span class="label-title" data-i18n="intervalTitle">Interval</span>
+                        <span class="label-description" data-i18n="intervalDesc">Frequency in minutes</span>
+                    </div>
+
+                    <div class="interval-container">
+                        <input
+                            type="range"
+                            id="intervalSlider"
+                            min="1"
+                            max="60"
+                            value="5"
+                            class="interval-slider"
+                        >
+                        <div class="interval-display">
+                            <span id="intervalValue" class="interval-value">5</span>
+                            <span class="interval-unit">min</span>
+                        </div>
+                    </div>
+
+                    <div class="preset-buttons">
+                        <button class="preset-btn" data-value="5" data-i18n-btn="preset5">5 min</button>
+                        <button class="preset-btn" data-value="15" data-i18n-btn="preset15">15 min</button>
+                        <button class="preset-btn" data-value="30" data-i18n-btn="preset30">30 min</button>
+                    </div>
+                </section>
+
+                <section class="card info-card">
+                    <span class="info-icon">💡</span>
+                    <div class="info-content">
+                        <p class="info-title" data-i18n="whyTitle">Why Eye Breaks?</p>
+                        <p class="info-text" data-i18n="whyText">Every 20 min, look 20 ft away for 20 sec (20-20-20 rule)</p>
+                    </div>
+                </section>
+
+                <button id="testButton" class="btn-primary btn-full">
+                    <span class="btn-icon">▶</span>
+                    <span class="btn-text" data-i18n="testReminder">Test Reminder</span>
+                </button>
+
+                <div id="statusMessage" class="status-message"></div>
+            </main>
+
+            <footer class="popup-footer">
+                <p class="footer-text" data-i18n="footerText">Made with coffee for your eyes</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
